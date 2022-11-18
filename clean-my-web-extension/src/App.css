@@ -1,0 +1,73 @@
+.main-popup{
+    /* border: 2px blue dotted; */
+    background-color: #7dbde09d;
+}
+
+.popup-button{
+    cursor:pointer;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.report-button{
+    border: 3px rgba(232, 16, 16, 0.51) solid;   
+    height: 60px;
+    margin:10px 0;
+    /* padding: 5px 5px; */
+    background-color: rgb(237, 135, 51);
+    padding: 5px;
+    padding-bottom: 2px;
+    padding-right:2px;
+    border-radius: 5px;
+}
+
+.data-button{
+    max-width:100%;
+    height:60px;
+    margin: 10px 0px;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+.upload-button{
+    border: 2px rgb(43, 43, 179) solid;
+    background-color: rgb(41, 119, 197);
+}
+
+.download-button{
+    border: 2px rgb(249, 169, 22) solid;
+    background-color: rgb(230, 174, 71);
+}
+
+.metamask-button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.advanced-button{
+    width:40px;
+}
+
+
+.connect-wallet {
+    background-color: #1578f1;
+    color: white;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+  }
+  
+  .connect-wallet-loading {
+    cursor: none;
+  }
