@@ -1,0 +1,21 @@
+[
+    {
+        "url": "somesite.com",
+        "features": [
+            {
+                "urlLength": 12,
+                "contains": [
+                    {
+                        "listName": "badwordlist"
+                    },
+                    {
+                        "listName": "badwordlist2"
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+
+
