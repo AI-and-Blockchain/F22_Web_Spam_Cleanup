@@ -1,3 +1,5 @@
+# flask --app app run
+
 #%%
 import json
 from flask import Flask,request
@@ -33,7 +35,11 @@ def verify():
         columns = feature_extractors.name
     )
 
+
+
     print(f'built dataframe in {time.perf_counter() - start:} ms')
+
+
 
 
     new_perf = verify_performance(dataset)
