@@ -1,8 +1,11 @@
-const AdvancedSettings = () => {
+import { Modal } from 'react-bootstrap'
+const AdvancedSettings = ({settingsOpen,toggleSettings}) => {
     return(
-        <div className='advanced-settings'>
+        <Modal show={settingsOpen} onHide={toggleSettings}>
             I am settings
+        <div className='advanced-settings'>
         </div>
+        </Modal>
     )
 }
 

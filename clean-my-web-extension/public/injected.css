@@ -1,0 +1,122 @@
+.result-container{
+    position:absolute;
+    right:0;
+}
+
+.popup-hidden{
+    visibility: hidden;
+    /* display:none; */
+}
+
+.popup-visible{
+    visibility: visible;
+    /* display:flex; */
+}
+
+
+
+.result-popup-btn{
+    width:100px;
+    border:1px solid red;
+    position:absolute;
+    right: 0;
+    /* width: 100px; */
+    text-align: center;
+    border-radius: 3px;
+    /* box-shadow: 2px 2px 1px 1px #80808091; */
+    /* color: #4d4a6a; */
+    border: 1px solid rgb(128 128 128);
+    /* background-color: #50d1eaa8; */
+    cursor: pointer;
+}
+
+.result-popup-btn:hover{
+    box-shadow: inset 30px 50px 1px 1px #80808029;
+    border: 1.5px solid rgb(185, 182, 182);
+    /* mix-blend-mode: darken;
+    background-color: rgba(132, 132, 132, 0.115);  */
+}
+
+.result-popup{
+    /* display:block; */
+    border: 2px solid rgb(35, 35, 66);
+    border-radius:5px;
+    width: 230px;
+    height:200px;
+    position:absolute;
+    background-color: rgba(206, 206, 234, 0.544);
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-popup table{
+    margin:10px;
+    background-color: white;
+}
+
+.result-popup td{
+    text-align: center;
+    border: .5px solid rgb(127, 125, 125);
+}
+
+
+
+
+
+
+
+
+
+
+.prediction-0{
+    background-color: #18c8eaa8;
+    color: #4d4a6a;
+}
+
+.prediction-1{
+    background-color: #44d0eba8;
+    color: #4d4a6a;
+}
+
+.prediction-2{
+    background-color: #6fdaeea8;
+    color: #4d4a6a;
+}
+
+.prediction-3{
+    background-color: #9ae0eda8;
+    color: #4d4a6a;
+}
+
+
+.prediction-4{
+    background-color: #ddeef1a8;
+    color: #4d4a6a;
+}
+
+.prediction-5{
+    background-color: #f1dddda8;
+    color: #ffffff;
+}
+
+.prediction-6{
+    background-color: #edaaaaa8;
+    color: #ffffff;
+}
+
+.prediction-7{
+    background-color: #eb7777a8;
+    color: #ffffff;
+}
+
+.prediction-8{
+    background-color: #ed4646a8;
+    color: #ffffff;
+}
+
+.prediction-9{
+    background-color: #ed1010a8;
+    color: #ffffff;
+}

@@ -1,22 +1,38 @@
-
 {
   "manifest_version": 3,
   "name": "Clean My Web",
   "version": "1.0",
   "description": "Show crowdsourced metrics next to google searches",
   "icons": {
-      "16": "icon-16.png",
-      "32": "icon-32.png",
-      "48": "icon-48.png",
-      "128": "icon-128.png"
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
   },
   "action": {
     "default_popup": "index.html"
   },
+  "content_scripts": [
+    {
+      "js": [
+        "bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js","content.js"
+      ],
+      "css": [
+        "bootstrap-5.2.3-dist/css/bootstrap.min.css","injected.css"
+      ],
+      "matches": [
+        "https://www.google.com/search*"
+      ]
+    }
+  ],
   "permissions": [
-    "activeTab", 
+    "activeTab",
     "scripting",
     "contextMenus",
-    "storage"
+    "storage",
+    "tabs"
+  ],
+  "web_accessible_resources": [
+
   ]
 }
