@@ -7,6 +7,10 @@ const MetaMaskConnector = ({
     address,
 }) => {
     return (
+      <>
+      <div style={{textAlign:'center'}}>
+      {address && !loading ? address.slice(0,10)+'...'+ address.slice(address.length-10): ''}
+      </div>
       <div className='metamask-button'>
         {address && !loading ? (
           <button onClick={onPressLogout} className="connect-wallet">
@@ -14,8 +18,8 @@ const MetaMaskConnector = ({
           </button>
         ) : loading ? (
           <button
-            className="connect-wallet connect-button-loading"
-            disabled
+          className="connect-wallet connect-button-loading"
+          disabled
           >
             <div>Loading...</div>
           </button>
@@ -25,6 +29,7 @@ const MetaMaskConnector = ({
           </button>
         )}
       </div>
+      </>
     );
   };
 

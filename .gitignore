@@ -1,3 +1,6 @@
 clean-my-web-extension/yarn.lock
 clean-my-web-smart-contract/cache
 clean-my-web-smart-contract/artifacts/build-info
+package-lock.json
+yarn.lock
+clean-my-web-extension/yarn.lock
