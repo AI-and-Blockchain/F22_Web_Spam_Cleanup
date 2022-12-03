@@ -7,6 +7,7 @@ describe("clean-my-web test", function() {
     await cmw.deployed();
 
     // deploy contract
+    console.log("address:",cmw.address)
     console.log(await cmw.get_owner());
     console.log("Contract delopyed")
     console.log("-----------------------------")

@@ -2,7 +2,7 @@ pragma solidity >=0.7.0 <0.9.0;
 
 import "hardhat/console.sol";
 contract clean_my_web {
-    event poped(Data data);
+    event dataEvent(uint index, string status, Data data);
     
     address private owner;
 
@@ -21,10 +21,14 @@ contract clean_my_web {
 
     Data[] private arr;
 
-    mapping(address => Data[]) all_data;
-    address[] private contributors;
+    // mapping(address => mapping(uint => Data)) public all_data;
+    // mapping(address => uint[]) public contribution_times;
+    // address[] public contributors;
+    // uint[] public timestamps; 
 
-    constructor() {
+
+
+    constructor() payable {
         owner = msg.sender; 
     }
 
@@ -37,28 +41,40 @@ contract clean_my_web {
         return owner;
     }
 
-    function upload(Data memory data) public{
+    function upload(Data memory data) external payable returns(uint){
+        console.log(
+            "Upload initiated",
+            msg.sender
+        );
+        require(msg.value > 999, "you need to pay at least 1000 wei to upload new data");
         arr.push(data);
-        all_data[msg.sender].push(data);
-        if (all_data[msg.sender].length == 1) {
-            contributors.push(msg.sender);
-        }
+        emit dataEvent(arr.length,"received upload",data);
+        return arr.length+1;
     }
 
-    function pop() public {
-        require(arr.length > 0, "index out of bound");
-        require(msg.sender == owner);
+    function download(uint start_idx) external payable returns(Data[] memory){
+        console.log(
+            "Download initiated",
+            msg.sender
+        );
+        require(msg.value > (100 * arr.length - start_idx )- 1, "you need to pay at least 100 wei to download new data");
+        require(start_idx < arr.length, "Start index out of bounds");
+        Data[] memory dataSlice = new Data[](arr.length - start_idx);
+        for(uint i = start_idx; i < arr.length; i++){
+            (bool success,) = payable(address(arr[i].contributor)).call{value: 100}("");
 
-        Data memory temp = arr[0];
-        for (uint i = 0; i < arr.length - 1; i++) {
-            arr[i] = arr[i + 1];
+            require(success,"failed to pay contributor");
+            dataSlice[i-start_idx] = arr[i];
+            emit dataEvent(arr.length,"successsfully paid contributor",arr[i]);
         }
-        arr.pop();
-        emit poped(temp);
+        return dataSlice;
     }
 
-    function get_contribution(address user) public view returns(Data[] memory) {
+    // delete everything. only owner can use
+    function flush() external payable{
         require(msg.sender == owner);
-        return all_data[user];
     }
 }
+
+
+// ["0x5B38Da6a701c568545dCfcB03FcB875f56beddC4", 100000000, ["url2"], ["fe2"], [1]]
