@@ -1,29 +1,38 @@
 {
-    "url":[
+    "urls":[
         "https://medium.com/weekly-webtips/how-to-build-a-react-express-application-with-yarn-e9bebb403558",
         "https://stackoverflow.com/questions/45818881/python-requests-response-decode"
     ],
-    "feature": [
+    "features": [
         {
-            "name": "countFromList1",
-            "operation": "count_occurance",
-            "source_url": "https://gist.githubusercontent.com/inwonakng/c9fb4978664455f467540acd3452fff1/raw/d3c006e02babe0a2efadb5a73d0b942cd79fba19/samplefilter1.json"
+            "name": "countList1FromSource",
+            "operation": "count",
+            "target": "source",
+            "data": "https://gist.githubusercontent.com/inwonakng/c9fb4978664455f467540acd3452fff1/raw/d3c006e02babe0a2efadb5a73d0b942cd79fba19/samplefilter1.json"
         }, {
-            "name": "countFromList2",
-            "operation": "count_occurance",
-            "source_url": "https://gist.githubusercontent.com/inwonakng/3713e2e2c7fce34c5670056f5aa62ea9/raw/e2123c01f5c1426bb9ef39fdc0683deaf5d22144/samplefilterscript.json"
-        } 
+            "name": "countList2FromSource",
+            "operation": "count",
+            "target": "source",
+            "data": "https://gist.githubusercontent.com/inwonakng/3713e2e2c7fce34c5670056f5aa62ea9/raw/e2123c01f5c1426bb9ef39fdc0683deaf5d22144/samplefilterscript.json"
+        }, {
+            "name": "urlLength",
+            "operation": "length",
+            "target": "url",
+            "data":""
+        }, {
+            "name": "countList3FromURL",
+            "operation": "count",
+            "target": "url",
+            "data": [".","/","-","_"]
+        }, {
+            "name": "countNumFromURL",
+            "operation": "count",
+            "target": "url",
+            "data": ["0","1","2","3","4","5","6","7","8","9"]
+        }
     ],
-    "label": [
+    "labels": [
         1,
         9
     ]
 }
-
-
-
-
-
-
-
-

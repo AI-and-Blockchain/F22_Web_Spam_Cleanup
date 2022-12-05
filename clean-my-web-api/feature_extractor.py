@@ -1,10 +1,12 @@
-import requests 
+def _count(subset,keywords):
+    return sum(subset.count(k) for k in keywords)
 
-def count_occurance(website,keywords):
-    return sum(website.raw_html.count(k) for k in keywords)
+def _length(subset,keywords):
+    return len(subset)
 
 FEATURE_OPERATIONS = {
-    "count_occurance": count_occurance
+    "count": _count,
+    "length": _length
 }
 
 class FeatureExtractor:
@@ -12,35 +14,28 @@ class FeatureExtractor:
         self,
         name,
         operation,
-        source_url,
+        target,
+        data,
     ):
-
-        r = requests.get(source_url)
-        source = ''
-        if r.status_code == 200:
-            source = r.json()
-        else:
-            print(f'cannot get source! status: {r.status_code}')
-        
-        self.source = source
-        self.operation = FEATURE_OPERATIONS[operation]
+        # self.website = Website(source_url)
         self.name = name
+        self.operation = FEATURE_OPERATIONS[operation]
+        self.target = target
+        self.data = data
     
     def __call__(
         self, 
         website
     ):
-        return self.operation(website,self.source)
+        return self.operation(website.get(self.target),self.data)
 
-
-        
 class Pipeline:
     def __init__(
         self,
         feature_extractors,
     ):
         self.feature_extractors = list(feature_extractors)
-        self.name = [f.name for f in self.feature_extractors]
+        self.names = [f.name for f in self.feature_extractors]
     def __call__(
         self,
         website
