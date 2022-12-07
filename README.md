@@ -23,11 +23,11 @@
 
 ## App architecture
 Smart contract states:
-1. modelParams (some object type)
-2. urlList (list of strings)
-3. featureExtractors mapping of string to string (first string is the unique name for the features, and second string is a javascript function that takes in raw html and outputs a value)
-4. history (mapping of hashes to index in data list, last one is the most recent upload)
-5. bestPerformance
+1. **modelParams** (some object type)
+2. **urlList** (list of strings)
+3. **featureExtractors** mapping of string to string (first string is the unique name for the features, and second string is a javascript function that takes in raw html and outputs a value)
+4. **history** (mapping of hashes to index in data list, last one is the most recent upload)
+5. **bestPerformance**
 
 Extension/client states:
 lastHash (hash of last download/upload)
