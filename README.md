@@ -44,8 +44,8 @@ Example input:
 hash: 0x1xb3d088….
 }
 ```
-using hash, only return what the client needs
-**uploadData({newData,newFeatureExtractors}) => **\
+using hash, only return what the client needs\
+**uploadData({newData,newFeatureExtractors}) => index of data in the array (uint)**\
 Example input:
 ```
 {
