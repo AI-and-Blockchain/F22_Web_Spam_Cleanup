@@ -21,6 +21,9 @@
 [https://youtu.be/_kJmJ1EsktA](https://youtu.be/_kJmJ1EsktA)
 
 
+## How to Run
+If you have installed the extension, the download and sign-in function should already work. If you would like to also test the verifier the Flask application needs to be ran. This can be done in the terminal by `cd`ing into `clean-my-web-api` and running `flask --app app run`.
+
 ## App architecture
 Smart contract states:
 1. **modelParams** (some object type)
