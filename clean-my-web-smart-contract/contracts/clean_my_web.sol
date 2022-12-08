@@ -12,7 +12,7 @@ contract clean_my_web {
         // url string
         string[] url_list;
         // json like string
-        string[] feature_extractor;
+        string[] features;
         // label for prediction
         uint[] labels;
 
